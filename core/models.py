@@ -16,7 +16,7 @@ class base(models.Model):
     class Meta:
         abstract = True
 
-class Servico(base):
+class servico(base):
     ICONE_CHOICES = (
         ('lni-cog', 'Engrenagem'),
         ('lni-stats-up', 'Grafico'),
@@ -25,15 +25,15 @@ class Servico(base):
         ('lni-mobile', 'Mobile'),
         ('lni-rocket', 'Foquete'),
     )
-    Servico = models.CharField("Serviços", max_length=100)
+    servico = models.CharField("Serviços", max_length=100)
     descricao = models.TextField('Descrição', max_length=200)
     icone= models.CharField('Incone', max_length=12, choices=ICONE_CHOICES)
 
     class Meta:
-        verbose_name = 'Servico'
-        verbose_name_plural = 'Servicos'
-    def _str_(self):
-        return self.Servico
+        verbose_name = 'servico'
+        verbose_name_plural = 'servicos'
+    def __str__(self):
+        return self.servico
 
 class Cargo(base):
     cargo= models.CharField('cargo', max_length= 100)
@@ -53,7 +53,7 @@ class Equipe(base):
     facebook = models.CharField('facebook', max_length=100, default='#')
     twitter= models.CharField('twitter', max_length=100, default='#')
     instagram= models.CharField('instagram', max_length=100, default='#')
-    class meta:
+    class Meta:
         verbose_name= 'equipe'
         verbose_name_plural= 'equipes'
 
@@ -72,7 +72,7 @@ class features(base):
     nome= models.CharField('nome', max_length=100)
     bio = models.TextField('bio', max_length=200)
     icone= models.CharField('Icone', max_length=16, choices=ESCOLHAS)
-    class meta:
+    class Meta:
         verbose_name= "feature"
         verbose_name_plural= "features"
     
