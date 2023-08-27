@@ -5,7 +5,7 @@ from django.urls import reverse_lazy
 from .models import servico, Equipe, features
 from  django.contrib import messages
 
-class indexview(FormView):
+class indexView(FormView):
     template_name = 'index.html'
     form_class= ContatoForms
     sucess_url = reverse_lazy('index')
