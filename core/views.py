@@ -13,7 +13,7 @@ class indexView(FormView):
 
     def get_context_data(self, **kwargs):
         context = super(indexview, self).get_context_data(**kwargs)
-        context ['Servicos']= servico.objects.all()
+        context ['servicos']= servico.objects.all()
         context['equipes'] = Equipe.objects.all()
         context['features']= features.objects.all()
         return context
